@@ -45,6 +45,10 @@ public class Book {
 	@ManyToOne
 	@JoinColumn(name="category_id", nullable=false)
 	private BookCategory category;
+	
+	@ManyToOne
+	@JoinColumn(name="category_sub_id", nullable=false)
+	private BookCategory categorysub;
 
 	public Long getId() {
 		return id;
@@ -134,5 +138,12 @@ public class Book {
 		this.category = category;
 	}
 	
+	public BookCategory getCategorysub() {
+		return categorysub;
+	}
+
+	public void setCategorysub(BookCategory categorysub) {
+		this.categorysub = categorysub;
+	}
 	
 }
